@@ -6,6 +6,7 @@ import verificarToken from "./auth.middleware.js"
 const router = Router()
 
 router.post("/login",authController.login)
+router.post("/register",authController.registroUsuario)
 
 router.get("/me", verificarToken, (req, res) => {
 

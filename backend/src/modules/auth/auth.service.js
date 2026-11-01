@@ -2,6 +2,30 @@ import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 import supabase from "../../config/supabase.js"
 
+
+
+
+
+
+const registroUsuario = async ({email, nombre, password}) => {
+
+    const passwordHash = await bcrypt.hash(password, 12)
+
+    const {data,error} = await supabase
+    .from("usuarios")
+    .insert([{
+        email: email.trim().toLowerCase(),
+        nombre: nombre.trim(),
+        password_hash: passwordHash,
+        rol: "operaria"
+    }])
+
+    if (error) throw new Error(error.message)
+
+    return data;
+
+}
+
 const login = async (email, password) => {
 
     const { data: usuario, error } = await supabase
@@ -61,4 +85,4 @@ const login = async (email, password) => {
 
 }
 
-export default {login}
+export default {login,registroUsuario}
