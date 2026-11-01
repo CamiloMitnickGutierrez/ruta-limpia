@@ -1,5 +1,5 @@
 // invoco a dontev dependencia para configurar variables de entorno del proyecto
-import "dotev/config"
+import "dotenv/config"
 
 import {createClient} from "@supabase/supabase-js"
 
