@@ -1,6 +1,6 @@
 import express from "express"
 import middlewareServer from "./config/middleware.server.js"
-import authRoutes from "./routes/auth.routes.js"
+import authRoutes from "./modules/auth/auth.routes.js"
 
 const app = express()
 

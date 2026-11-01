@@ -52,7 +52,7 @@ const login = async (res,req) => {
     }
 }
 
-export default login
+export default {login}
 
         
     
