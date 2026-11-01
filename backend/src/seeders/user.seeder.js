@@ -1,7 +1,7 @@
 import "dotenv/config"
 import bcrypt from "bcryptjs"
 import supabase from "../config/supabase.js"
-import { email } from "zod"
+
 
 const usuariosIniciales = async () =>{
 
@@ -14,7 +14,7 @@ const usuariosIniciales = async () =>{
     },
     {
         email: process.env.OPERARIA_EMAIL,
-        password: process.env-OPERARIA_PASSWORD,
+        password: process.env.OPERARIA_PASSWORD,
         nombre: process.env.OPERARIA_NOMBRE,
         rol: "operaria"
         
@@ -56,7 +56,7 @@ const usuariosIniciales = async () =>{
             .insert({
 
                 email: user.email,
-                password: passwordHash,
+                password_hash: passwordHash,
                 nombre: user.nombre,
                 rol: user.rol
 
