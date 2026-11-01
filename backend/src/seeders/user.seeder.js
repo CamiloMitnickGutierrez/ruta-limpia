@@ -77,7 +77,7 @@ const usuariosIniciales = async () =>{
     } catch (error) {
 
 
-        console.error("Error en sembrar semillas de usuarios:", error.message)
+        console.error("Error en sembrar semillas de usuarios:",error.message)
 
         process.exitCode = 1
         
