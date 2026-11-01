@@ -84,18 +84,6 @@ const usuariosIniciales = async () =>{
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 usuariosIniciales()
