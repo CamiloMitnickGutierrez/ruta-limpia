@@ -8,7 +8,7 @@ middlewareServer(app)
 
 
 
-app.get("/",(res,req) => {
+app.get("/",(req,res) => {
     res.send("api lista")
 })
 

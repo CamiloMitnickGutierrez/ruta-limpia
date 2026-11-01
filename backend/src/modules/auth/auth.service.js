@@ -34,7 +34,6 @@ const login = async (email, password) => {
         throw new Error("CREDENCIALES_INVALIDAS")
     }
 
-
     const token = jwt.sign(
         {
             rol: usuario.rol
@@ -62,4 +61,4 @@ const login = async (email, password) => {
 
 }
 
-export default login;
+export default {login}

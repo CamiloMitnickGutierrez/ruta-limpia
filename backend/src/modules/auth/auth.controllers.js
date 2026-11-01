@@ -1,6 +1,6 @@
 import authService from "./auth.service.js"
 
-const login = async (res,req) => {
+const login = async (req,res) => {
 
     try {
 
@@ -25,30 +25,30 @@ const login = async (res,req) => {
         return res.status(200).json({
 
             message: "inicio de sesion exitoso",
-            usuario: data.usuario,
+            usuario: data.datosUsuario,
             token: data.token
         })
         
     } catch (error) {
 
+        console.error("Error en login:", error)
 
-        if (error.message === "INVALID_CREDENTIALS") {
+        if (error.message === "CREDENCIALES_INVALIDAS") {
             return res.status(401).json({
-                message: "Correo o contraseña incorrectos."
-            });
+            message: "Correo o contraseña incorrectos"
+        });
         }
 
-        if (error.message === "DATABASE_ERROR") {
+        if (error.message === "ERROR_DATABASE") {
             return res.status(503).json({
-                message: "No fue posible consultar la base de datos."
+                message: "No fue posible consultar la base de datos"
             });
         }
-
-        console.error("Error en login:", error);
 
         return res.status(500).json({
-            message: "Error interno del servidor."
-        });
+            message: "Error interno del servidor"
+        })
+    
     }
 }
 
@@ -56,8 +56,6 @@ export default {login}
 
         
     
-
-
 
 
 

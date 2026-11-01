@@ -10,7 +10,7 @@ const verificarToken = async (req,res,next) => {
 
         const authCabezera = req.headers.authorization
 
-        if (!authCabezera || !authHeader.startsWith("Bearer")) {
+        if (!authCabezera || !authCabezera.startsWith("Bearer ")) {
 
             return res.status(401).json({
                 
@@ -80,7 +80,6 @@ const verificarToken = async (req,res,next) => {
 }
 
 export default verificarToken
-
 
 
 
