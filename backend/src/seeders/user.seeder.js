@@ -1,7 +1,7 @@
 import "dotenv/config"
 import bcrypt from "bcryptjs"
 import supabase from "../config/supabase.js"
-import { email } from "zod"
+
 
 const usuariosIniciales = async () =>{
 
